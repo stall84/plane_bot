@@ -1,0 +1,23 @@
+service: plane-bot
+frameworkVersion: "3"
+configValidationMode: warn
+
+provider:
+  name: aws
+  stage: dev
+  region: us-east-1
+  profile: AWS-MES
+  runtime: nodejs14.x
+  memorySize: 512
+  timeout: 8
+  metrics: true
+  httpApi:
+    cors: true
+
+functions:
+  main:
+    handler: build/main.handler
+    events:
+      - httpApi:
+          method: POST
+          path: /post/1

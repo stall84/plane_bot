@@ -1,15 +1,17 @@
 import fetch from 'node-fetch';
 import * as AWS from 'aws-sdk';
-import { APIGatewayProxyEvent, APIGatewayProxyHandler } from 'aws-lambda';
-import { Context } from 'aws-sdk/clients/autoscaling';
+import { Context, APIGatewayProxyResult, APIGatewayEvent } from 'aws-lambda';
 
 
-export const handler = (event: APIGatewayProxyEvent, context: Context): APIGatewayProxyHandler => {
 
+export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
+
+    console.log(`Event: ${JSON.stringify(event, null, 2)}`);
+    console.log(`Context: ${JSON.stringify(context, null, 2)}`);
     return {
-        statusCode: 201,
+        statusCode: 200,
         body: JSON.stringify({
-            message: 'Unknown Endpoint'
+            message: 'TESTING'
         })
     };
 }
