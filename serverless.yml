@@ -6,7 +6,7 @@ provider:
   name: aws
   stage: dev
   region: us-east-1
-  profile: plane-bot-beta
+  profile: AWS-MES
   runtime: nodejs14.x
   memorySize: 512
   timeout: 8
