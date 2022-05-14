@@ -21,12 +21,6 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
             content.push(title);
         });
         console.log(`Debugging data : `, data);
-    } catch (error) {
-        console.warn('Error occurred scraping : ', error);
-    }
-
-
-    try {
         return {
             statusCode: 200,
             body: JSON.stringify({
@@ -34,7 +28,6 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
                 content: content
             })
         };
-        
     } catch (error) {
         return {
             statusCode: 500,
