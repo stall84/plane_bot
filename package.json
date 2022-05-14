@@ -1,11 +1,29 @@
 {
   "dependencies": {
     "aws-sdk": "^2.1134.0",
+    "cheerio": "^1.0.0-rc.10",
     "node-fetch": "^3.2.4"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.97",
     "@types/node": "^17.0.33",
     "typescript": "^4.6.4"
-  }
+  },
+  "name": "plane_bot",
+  "version": "0.0.1",
+  "description": "scrapper-bot for small planes",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stall84/plane_bot.git"
+  },
+  "author": "Michael Stallings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stall84/plane_bot/issues"
+  },
+  "homepage": "https://github.com/stall84/plane_bot#readme"
 }
