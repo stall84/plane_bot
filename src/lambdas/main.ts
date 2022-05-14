@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import * as AWS from 'aws-sdk';
 import { Context, APIGatewayProxyResult, APIGatewayEvent } from 'aws-lambda';
 import * as cheerio from 'cheerio';
-
+import * as CDP from 'chrome-remote-interface';
 
 
 export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
@@ -36,4 +36,4 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
             })
         };
     }
-}
+};

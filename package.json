@@ -1,16 +1,7 @@
 {
-  "dependencies": {
-    "aws-sdk": "^2.1134.0",
-    "cheerio": "^1.0.0-rc.10",
-    "node-fetch": "^3.2.4"
-  },
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.97",
-    "@types/node": "^17.0.33",
-    "typescript": "^4.6.4"
-  },
   "name": "plane_bot",
   "version": "0.0.1",
+  "type": "module",
   "description": "scrapper-bot for small planes",
   "main": "main.js",
   "scripts": {
@@ -25,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/stall84/plane_bot/issues"
   },
-  "homepage": "https://github.com/stall84/plane_bot#readme"
+  "homepage": "https://github.com/stall84/plane_bot#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1134.0",
+    "cheerio": "^1.0.0-rc.10",
+    "chrome-remote-interface": "^0.31.2",
+    "node-fetch": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.97",
+    "@types/chrome-remote-interface": "^0.31.4",
+    "@types/node": "^17.0.33",
+    "typescript": "^4.6.4"
+  }
 }

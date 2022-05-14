@@ -16,7 +16,7 @@ provider:
 
 functions:
   main:
-    handler: build/main.handler
+    handler: build/lambdas/main.handler
     events:
       - httpApi:
           method: POST
