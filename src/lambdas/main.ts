@@ -14,6 +14,9 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
     try {
         let pdf = await puppetPdf();
         console.log('pdf: ', pdf);
+        const s3 = new AWS.S3();
+    
+
         return {
             statusCode: 200,
             body: JSON.stringify({
