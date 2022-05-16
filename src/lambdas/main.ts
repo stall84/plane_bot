@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import * as AWS from 'aws-sdk';
 import { Context, APIGatewayProxyResult, APIGatewayEvent } from 'aws-lambda';
 import * as cheerio from 'cheerio';
-import * as CDP from 'chrome-remote-interface';
+import { puppetPdf } from '../services/puppetPdf';
 
 
 export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
@@ -10,24 +10,16 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
     console.log(`Event: ${JSON.stringify(event, null, 2)}`);
     console.log(`Context: ${JSON.stringify(context, null, 2)}`);
 
-    const content: any = [];
     
     try {
-        const response = await fetch('https://www.controller.com/listings/search?Category=6&ModelGroup=CHEROKEE&Manufacturer=PIPER');
-        const data = await response.text();
-        const $ = cheerio.load(data);
-        $('.listing-portion-title', data).each(() => {
-            const title = $(this).text();
-            content.push(title);
-        });
-        console.log(`Debugging data : `, data);
+        let pdf = await puppetPdf();
+        console.log('pdf: ', pdf);
         return {
             statusCode: 200,
             body: JSON.stringify({
-                message: `Successfull Scrape at ${Date.now().toLocaleString} - See content`,
-                content: content
+                message: 'Check cloudwatch logs for buffer output'
             })
-        };
+        }
     } catch (error) {
         return {
             statusCode: 500,

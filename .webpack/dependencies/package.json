@@ -1,0 +1,11 @@
+{
+  "name": "plane-bot",
+  "version": "1.0.0",
+  "description": "Packaged externals for plane-bot",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^14.1.0"
+  }
+}
